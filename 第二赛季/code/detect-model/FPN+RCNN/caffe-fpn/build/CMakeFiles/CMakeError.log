@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/mnt/group/ocr/xieyufei/tianchi/season2/code/FPN/caffe-fpn/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_02613/fast"
+/usr/bin/make -f CMakeFiles/cmTC_02613.dir/build.make CMakeFiles/cmTC_02613.dir/build
+make[1]: Entering directory '/workspace/mnt/group/ocr/xieyufei/tianchi/season2/code/FPN/caffe-fpn/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_02613.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_02613.dir/CheckSymbolExists.c.o   -c /workspace/mnt/group/ocr/xieyufei/tianchi/season2/code/FPN/caffe-fpn/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_02613
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_02613.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_02613.dir/CheckSymbolExists.c.o  -o cmTC_02613 -rdynamic 
+CMakeFiles/cmTC_02613.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_02613.dir/build.make:97: recipe for target 'cmTC_02613' failed
+make[1]: *** [cmTC_02613] Error 1
+make[1]: Leaving directory '/workspace/mnt/group/ocr/xieyufei/tianchi/season2/code/FPN/caffe-fpn/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_02613/fast' failed
+make: *** [cmTC_02613/fast] Error 2
+
+File /workspace/mnt/group/ocr/xieyufei/tianchi/season2/code/FPN/caffe-fpn/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/mnt/group/ocr/xieyufei/tianchi/season2/code/FPN/caffe-fpn/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dec81/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dec81.dir/build.make CMakeFiles/cmTC_dec81.dir/build
+make[1]: Entering directory '/workspace/mnt/group/ocr/xieyufei/tianchi/season2/code/FPN/caffe-fpn/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dec81.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_dec81.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_dec81
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dec81.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_dec81.dir/CheckFunctionExists.c.o  -o cmTC_dec81 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_dec81.dir/build.make:97: recipe for target 'cmTC_dec81' failed
+make[1]: *** [cmTC_dec81] Error 1
+make[1]: Leaving directory '/workspace/mnt/group/ocr/xieyufei/tianchi/season2/code/FPN/caffe-fpn/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_dec81/fast' failed
+make: *** [cmTC_dec81/fast] Error 2
+
+
